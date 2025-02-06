@@ -1,7 +1,12 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
 using ClassRoomNet60;
 
-internal class Program
+public class Program
 {
     private static void Main(string[] args)
     {
@@ -9,12 +14,15 @@ internal class Program
 
         List<Student> students = new List<Student>();
 
-        /*public string ClassName;
 
-        List<Student> StudentList;
+        students.Add(new Student("Adam", 2003, 20 / 01));
 
-        DateTime SemesterStart;*/
+        foreach (Student student in students)
+        {
+            Console.WriteLine(student);
+        }
+       
 
-        students.Add(new Student() {Name = "Adam", Birthday = 2003, Birtmonth = 20/01});
+        Console.ReadKey();
     }
 }

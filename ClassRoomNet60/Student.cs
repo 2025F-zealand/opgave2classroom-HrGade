@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassRoomNet60
 {
-    internal class Student
+    public class Student
     {
 
         public string Name;
