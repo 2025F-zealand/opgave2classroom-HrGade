@@ -15,6 +15,10 @@ namespace ClassRoomNet60
 
         public int Birthday;
 
+        public Student()
+        {
+        }
+
         public Student(string name, int birthday, int birthmonth) 
         {
 
