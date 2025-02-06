@@ -20,7 +20,7 @@ namespace ClassRoomNet60
 
         public void CountStudentsBySeason()
         {
-            var seasonCounts = new Dictionary<string, int>
+            var seasonCounts = new Dictionary<string, int> //Dictionary til <TKey,TValue>
             {
                 { "Winter", 0 },
                 { "Spring", 0 },
@@ -40,7 +40,7 @@ namespace ClassRoomNet60
             Console.WriteLine("Fødselsdagsfordeling pr. årstid:");
             foreach (var kvp in seasonCounts)
             {
-                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+                Console.WriteLine($"{kvp.Key}: {kvp.Value}"); //Key Value Pair
             }
         }
 
