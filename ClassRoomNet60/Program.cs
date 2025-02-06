@@ -10,18 +10,21 @@ public class Program
 {
     private static void Main(string[] args)
     {
-        ClassRoom ClassRoom3Q = new ClassRoom();
-
-        List<Student> students = new List<Student>();
-
-
-        students.Add(new Student("Adam", 2003, 20 / 01));
-
-        foreach (Student student in students)
+        
+        ClassRoom classRoom = new ClassRoom // Opretter et nyt klasselokale
         {
-            Console.WriteLine(student);
-        }
-       
+            ClassName = "3Q",
+            SemesterStart = new DateTime(2025, 01, 27)
+        };
+        
+        
+        classRoom.StudentList.Add(new Student("Adam", 20, 01)); // Tilføj elev
+
+        classRoom.StudentList.Add(new Student("Batur", 16, 05));// Tilføj elev
+
+        classRoom.PrintClassInfo(); // Udskriver klassens information
+
+        
 
         Console.ReadKey();
     }

@@ -8,12 +8,55 @@ namespace ClassRoomNet60
 {
     public class ClassRoom
     {
-        public string ClassName;
+        public string ClassName { get; set; }
+        public List<Student> StudentList { get; set; }
+        public DateTime SemesterStart { get; set; }
 
-        List<Student> StudentList;
+        public ClassRoom() // konstruktør
+        {
+            StudentList = new List<Student>(); //Opretter en liste med studerende
+        }
 
-        DateTime SemesterStart;
 
-        public ClassRoom() { }
+        public void CountStudentsBySeason()
+        {
+            var seasonCounts = new Dictionary<string, int>
+            {
+                { "Winter", 0 },
+                { "Spring", 0 },
+                { "Summer", 0 },
+                { "Autumn", 0 }
+            };
+
+            foreach (var student in StudentList)
+            {
+                string season = student.Season();
+                if (seasonCounts.ContainsKey(season))
+                {
+                    seasonCounts[season]++;
+                }
+            }
+
+            Console.WriteLine("Fødselsdagsfordeling pr. årstid:");
+            foreach (var kvp in seasonCounts)
+            {
+                Console.WriteLine($"{kvp.Key}: {kvp.Value}");
+            }
+        }
+
+        public void PrintClassInfo()
+        {
+            Console.WriteLine($"Klassenavn: {ClassName}");
+            Console.WriteLine($"Semesterstart: {SemesterStart:dd-MM-yyyy}");
+            Console.WriteLine("Studerende:");
+            foreach (var student in StudentList)
+            {
+                Console.WriteLine(student);
+            }
+
+            Console.WriteLine();
+            CountStudentsBySeason();
+        }
     }
 }
+
